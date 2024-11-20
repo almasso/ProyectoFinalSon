@@ -766,7 +766,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: ecdbd458-9f1d-422a-af4e-45c54a1a1151
   framebufferDepthMemorylessMode: 0
@@ -777,7 +777,7 @@ PlayerSettings:
   - High
   - Very High
   - Ultra
-  projectName: 
+  projectName: Proyecto Final
   organizationId: almasso
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
