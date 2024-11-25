@@ -87,10 +87,19 @@
 	<object class="MixerBusPanner" id="{71bb506c-2ba9-4905-b58a-2461beb30018}" />
 	<object class="SoundScatterer" id="{ba9fe49a-3c05-46c0-b015-8d3c14f7ec0b}">
 		<property name="length">
-			<value>5</value>
+			<value>0.40000000000000002</value>
 		</property>
 		<property name="polyphony">
-			<value>4</value>
+			<value>1</value>
+		</property>
+		<property name="soundStealing">
+			<value>3</value>
+		</property>
+		<property name="minimumTimeBetweenSounds">
+			<value>300</value>
+		</property>
+		<property name="maximumTimeBetweenSounds">
+			<value>300</value>
 		</property>
 		<property name="pitchRandomization">
 			<value>1.20000005</value>
@@ -100,8 +109,11 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{126358f3-8b8b-4cbd-844c-e2adfda030a4}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
-			<value>Audio 1</value>
+			<value>StepsSFX</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{8f2ac052-b8df-4775-85c8-b686411a0298}</destination>
