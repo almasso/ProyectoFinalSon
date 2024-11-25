@@ -426,6 +426,10 @@ PrefabInstance:
       propertyPath: Avatar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8601427866244821768, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
+      propertyPath: GunFireTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8601427866244821769, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -504,6 +508,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3818581689403545509, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818581689403545509, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -517,6 +525,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5318803118120379234, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318803118120379234, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5318803118120379234, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
