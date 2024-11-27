@@ -85,6 +85,9 @@ crashlytics-build.properties
 /Proyecto Final/[Aa]ssets/StreamingAssets/**/*.bank
 /Proyecto Final/[Aa]ssets/StreamingAssets/**/*.bank.meta
 
+/Proyecto Final FMOD/.cache/*
+/Proyecto Final FMOD/.user/*
+
 # If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
 # Log files can be ignored.
 fmod_editor.log
