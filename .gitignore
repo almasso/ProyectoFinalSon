@@ -46,6 +46,8 @@
 *.mdb
 *.opendb
 *.VC.db
+*.DS_Store
+*.pdc
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -60,7 +62,6 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
-
 # Crashlytics generated file
 crashlytics-build.properties
 
