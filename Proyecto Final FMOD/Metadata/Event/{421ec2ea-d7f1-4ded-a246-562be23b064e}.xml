@@ -90,7 +90,7 @@
 	<object class="MixerBusPanner" id="{6fbfd562-de74-46b4-a466-e337ea04297e}" />
 	<object class="SoundScatterer" id="{9371a6b3-a7d9-470c-9b01-62cc38c9fc96}">
 		<property name="length">
-			<value>1.4000000000000001</value>
+			<value>0.5</value>
 		</property>
 		<property name="polyphony">
 			<value>1</value>
@@ -118,6 +118,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{bbd789b1-bb4b-4af5-b639-21e8964aa010}">
+		<property name="volume">
+			<value>-8</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
