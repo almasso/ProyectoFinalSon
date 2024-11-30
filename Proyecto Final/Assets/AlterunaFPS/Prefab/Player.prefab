@@ -2342,6 +2342,7 @@ GameObject:
   - component: {fileID: 8601427866244821769}
   - component: {fileID: 8601427866244821771}
   - component: {fileID: 1709546744555315895}
+  - component: {fileID: -5399470112085219970}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2571,6 +2572,43 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-5399470112085219970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337464628717331057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2025315718
+      Data2: 1217478424
+      Data3: 1728775318
+      Data4: 58055309
+    Path: event:/BackgroundTheme
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Danger
+    Value: 0
+  - Name: Reload
+    Value: 0
+  - Name: Speed
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5412847022820931746
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 
 namespace AlterunaFPS
 {
@@ -57,6 +58,8 @@ namespace AlterunaFPS
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
+		private StudioEventEmitter emitter;
+        
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -167,7 +170,14 @@ namespace AlterunaFPS
 				_animator.SetFloat(_animIDSpeed, _animationBlend);
 				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
 			}
-		}
+
+			//Apartado de sonido
+			if (emitter)
+			{
+                emitter.EventInstance.setParameterByName("speed", _speed / SprintSpeed);
+            }
+            
+        }
 
 		private void JumpAndGravity()
 		{

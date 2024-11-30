@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FMODUnity;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 
@@ -12,16 +15,40 @@ namespace AlterunaFPS
 		
 		private Health _health;
 		private int _lastSpawnIndex;
-		
-		private void InitializeHealth()
+
+		RawImage damageIndicator;
+        
+
+        private void InitializeHealth()
 		{
 			_health = GetComponent<Health>();
-			if (_isOwner)
+			GameObject damageIndicatorGO = GameObject.FindGameObjectWithTag("DamageIndicator");
+			if(damageIndicatorGO != null)
+			{
+				damageIndicator = damageIndicatorGO.GetComponent<RawImage>();
+			}
+
+            if (_isOwner)
 			{
 				_health.OnDeath.AddListener(OnDeath);
 				_health.HealthPoints = MaxHealth;
+				_health.MaxHealthPoints = MaxHealth;
 			}
-		}
+			UpdatedHealthValue();
+        }
+		public void UpdatedHealthValue()
+		{
+			if (damageIndicator)
+			{
+				Color c = Color.white; c.a = (1 - (_health.HealthPoints / MaxHealth));
+				damageIndicator.color = c;
+
+            }
+            if (emitter)
+            {
+                emitter.EventInstance.setParameterByName("danger", 1 - (_health.HealthPoints / MaxHealth));
+            }
+        }
 
 		private void OnDeath(ushort senderID)
 		{
@@ -38,8 +65,9 @@ namespace AlterunaFPS
 			}
 			
 			_health.HealthPoints = MaxHealth;
+            UpdatedHealthValue();
 
-			if (_offline)
+            if (_offline)
 			{
 				transform.position = Vector3.zero;
 			}

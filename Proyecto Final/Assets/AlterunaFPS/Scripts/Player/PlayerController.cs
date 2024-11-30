@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using Alteruna;
+using FMODUnity;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace AlterunaFPS
 {
@@ -43,7 +45,8 @@ namespace AlterunaFPS
 		{
 			InitializeCamera();
 			InitializeHealth();
-		}
+			emitter = GetComponent<StudioEventEmitter>();
+        }
 
 		private void OnDisable()
 		{
@@ -56,7 +59,7 @@ namespace AlterunaFPS
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-		}
+        }
 
 		private void LateUpdate()
 		{

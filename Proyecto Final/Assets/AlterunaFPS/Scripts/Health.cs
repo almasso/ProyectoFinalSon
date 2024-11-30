@@ -1,7 +1,10 @@
-﻿using System;
+﻿using FMODUnity;
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Serialization;
 
 namespace AlterunaFPS
@@ -18,6 +21,7 @@ namespace AlterunaFPS
 		public float PenetrationResistance = 0.5f;
 		public float DamageMultiplier = 1f;
 		public float HealthPoints = 0f;
+		public float MaxHealthPoints = 0f;
 		
 		public UnityEvent<ushort> OnDeath;
 		
@@ -25,7 +29,7 @@ namespace AlterunaFPS
 		private float _lastDamage;
 		private int _lastDamageIndex;
 
-		public bool Alive
+        public bool Alive
 		{
 			get
 			{
@@ -63,6 +67,7 @@ namespace AlterunaFPS
 				if (transform.root.CompareTag("Player"))
                 {
 					ScoreBoard.Instance.AddScore(senderID, (int)damage);
+					transform.gameObject.GetComponent<PlayerController>().UpdatedHealthValue();
 				}
 
 				if (HealthPoints <= 0f)
@@ -72,5 +77,14 @@ namespace AlterunaFPS
 				}
 			}
 		}
-	}
+
+		//DEBUG ONLY
+        public void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.C))
+			{
+				TakeDamage(1, 4);
+            }
+        }
+    }
 }
