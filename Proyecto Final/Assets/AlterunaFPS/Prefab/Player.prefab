@@ -4263,11 +4263,11 @@ MonoBehaviour:
   ReloadSfx: {fileID: 8601427866331377633}
   _shotEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1109312234
+      Data2: 1307432945
+      Data3: 727074466
+      Data4: 1309031394
+    Path: event:/Shoot
 --- !u!1 &9011048308682517274
 GameObject:
   m_ObjectHideFlags: 0
