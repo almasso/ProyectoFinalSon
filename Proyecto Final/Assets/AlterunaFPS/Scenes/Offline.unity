@@ -370,6 +370,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2805148560747078794, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
+      propertyPath: _shotEvent.Path
+      value: event:/Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805148560747078794, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
+      propertyPath: _shotEvent.Guid.Data1
+      value: 1109312234
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805148560747078794, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
+      propertyPath: _shotEvent.Guid.Data2
+      value: 1307432945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805148560747078794, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
+      propertyPath: _shotEvent.Guid.Data3
+      value: 727074466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2805148560747078794, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
+      propertyPath: _shotEvent.Guid.Data4
+      value: 1309031394
+      objectReference: {fileID: 0}
     - target: {fileID: 4708983315830995147, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -434,7 +454,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4612910656213477611, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

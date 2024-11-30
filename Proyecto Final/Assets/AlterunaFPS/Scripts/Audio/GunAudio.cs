@@ -5,9 +5,11 @@ namespace AlterunaFPS
 	public class GunAudio : MonoBehaviour
 	{
 		public RandomPitch ReloadSfx;
-		public RandomPitch FireSfx;
-		
-		public void PlayReloadSfx() => ReloadSfx.Play();
-		public void PlayFireSfx() => FireSfx.Play();
+
+        [SerializeField]
+        private FMODUnity.EventReference _shotEvent;
+
+        public void PlayReloadSfx() => ReloadSfx.Play();
+		public void PlayFireSfx() => FMODUnity.RuntimeManager.PlayOneShot(_shotEvent, gameObject.transform.position);
 	}
 }
