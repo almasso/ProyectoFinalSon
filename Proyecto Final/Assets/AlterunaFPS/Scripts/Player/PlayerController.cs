@@ -15,6 +15,7 @@ namespace AlterunaFPS
         private void Awake()
         {
 			_controller = GetComponent<CharacterController>();
+			_footstepsManager = GetComponent<FootstepsManager>();
 		}
 
         private void Start()

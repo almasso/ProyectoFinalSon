@@ -132,6 +132,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4103378075992252225, guid: 8ae8ed010fa75f44ca00084dd964ceea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103378075992252239, guid: 8ae8ed010fa75f44ca00084dd964ceea, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4103378077160603626, guid: 8ae8ed010fa75f44ca00084dd964ceea, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -370,6 +378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5399470112085219970, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2805148560747078794, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
       propertyPath: _shotEvent.Path
       value: event:/Shoot
@@ -400,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708983315830995147, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 4708983315830995147, guid: 2345b75529ffb3540a4ff000a317c26c, type: 3}
       propertyPath: m_LocalPosition.z

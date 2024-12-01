@@ -22,10 +22,14 @@ namespace AlterunaFPS
 		public float SpeedChangeRate = 10.0f;
 
 		public AudioClip LandingAudioClip;
-		public AudioClip[] FootstepAudioClips;
-		[Range(0, 1)] public float FootstepAudioVolume = 0.5f;
+		
+		[SerializeField]
+        private FMODUnity.EventReference _stepsEvent;
+        private FMOD.Studio.EventInstance _eventInstance;
 
-		[Space(10)] [Tooltip("The height the player can jump")]
+		private FootstepsManager _footstepsManager;
+
+        [Space(10)] [Tooltip("The height the player can jump")]
 		public float JumpHeight = 1.2f;
 
 		[Tooltip("The character uses its own gravity value. The engine default is -9.81f")]

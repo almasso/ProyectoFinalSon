@@ -1,4 +1,6 @@
+using FMODUnity;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace AlterunaFPS
 {
@@ -17,6 +19,7 @@ namespace AlterunaFPS
 		private Animator _animator;
 		
 		private bool _hasAnimator;
+
 
 		private void InitialiseAnimations()
 		{
@@ -43,19 +46,19 @@ namespace AlterunaFPS
 		{
 			if (animationEvent.animatorClipInfo.weight > 0.5f)
 			{
-				if (FootstepAudioClips.Length > 0)
-				{
-					var index = Random.Range(0, FootstepAudioClips.Length);
-					AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
-				}
-			}
+                _eventInstance = FMODUnity.RuntimeManager.CreateInstance(_stepsEvent);
+                _eventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(this.gameObject.transform.position));
+                _eventInstance.setParameterByNameWithLabel("Floor Material", _footstepsManager.GetCurrentFloorMaterial());
+				_eventInstance.start();
+				_eventInstance.release();
+            }
 		}
 
 		private void OnLand(AnimationEvent animationEvent)
 		{
 			if (animationEvent.animatorClipInfo.weight > 0.5f)
 			{
-				AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+				//AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
 			}
 		}
 		
