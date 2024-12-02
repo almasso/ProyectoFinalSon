@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{fc4e3365-e58a-433d-b696-0ceefe64b178}">
+		<property name="name">
+			<value>ReloadPhase</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b119c8d4-2a2c-4ff7-8ae2-2eb90bfa8557}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4c9dd8b8-d667-4040-a8d5-7334a15372e0}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4c9dd8b8-d667-4040-a8d5-7334a15372e0}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
