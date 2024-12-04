@@ -6,36 +6,18 @@ namespace AlterunaFPS
 	public class GunAudio : MonoBehaviour
 	{
 		public RandomPitch ReloadSfx;
-
-        [SerializeField]
-        private FMODUnity.EventReference _shotEvent;
-
-        StudioEventEmitter emitter;
-
-        public void PlayReloadSfx() => ReloadSfx.Play();
-
-
-        public void Start()
+        
+        public void PlayMagazineSound()
         {
-            emitter = GetComponentInParent<StudioEventEmitter>();
+            SoundManager.Instance().SetReloadPhase(0);
+            SoundManager.Instance().PlayReloadSound(this.gameObject.transform.position);
         }
 
-        public void StartReload()
-		{
-            if(emitter != null)
-            {
-                emitter.EventInstance.setParameterByName("reload", 1);
-            }
-		}
-
-        public void EndReload()
+        public void SetReloadPhase(int phase)
         {
-            if (emitter != null)
-            {
-                emitter.EventInstance.setParameterByName("reload", 0);
-            }
+            SoundManager.Instance().SetReloadPhase(phase);
         }
 
-        public void PlayFireSfx() => FMODUnity.RuntimeManager.PlayOneShot(_shotEvent, gameObject.transform.position);
+        public void PlayFireSfx() => SoundManager.Instance().PlayShotSound(gameObject.transform.position);
 	}
 }

@@ -2500,13 +2500,6 @@ MonoBehaviour:
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
-  _stepsEvent:
-    Guid:
-      Data1: -1178230804
-      Data2: 1217138116
-      Data3: -1675306869
-      Data4: 1679246152
-    Path: event:/Step
   JumpHeight: 1.2
   Gravity: -15
   JumpTimeout: 0.5
@@ -4322,13 +4315,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReloadSfx: {fileID: 8601427866331377633}
-  _shotEvent:
-    Guid:
-      Data1: 1109312234
-      Data2: 1307432945
-      Data3: 727074466
-      Data4: 1309031394
-    Path: event:/Shoot
 --- !u!1 &9011048308682517274
 GameObject:
   m_ObjectHideFlags: 0

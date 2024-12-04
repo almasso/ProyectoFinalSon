@@ -46,11 +46,7 @@ namespace AlterunaFPS
 		{
 			if (animationEvent.animatorClipInfo.weight > 0.5f)
 			{
-                _eventInstance = FMODUnity.RuntimeManager.CreateInstance(_stepsEvent);
-                _eventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(this.gameObject.transform.position));
-                _eventInstance.setParameterByNameWithLabel("Floor Material", _footstepsManager.GetCurrentFloorMaterial());
-				_eventInstance.start();
-				_eventInstance.release();
+				SoundManager.Instance().PlayFootstepSound(_footstepsManager.GetCurrentFloorMaterial(), this.gameObject.transform.position);
             }
 		}
 

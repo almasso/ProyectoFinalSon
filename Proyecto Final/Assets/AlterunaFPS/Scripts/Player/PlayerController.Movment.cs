@@ -23,10 +23,6 @@ namespace AlterunaFPS
 
 		public AudioClip LandingAudioClip;
 		
-		[SerializeField]
-        private FMODUnity.EventReference _stepsEvent;
-        private FMOD.Studio.EventInstance _eventInstance;
-
 		private FootstepsManager _footstepsManager;
 
         [Space(10)] [Tooltip("The height the player can jump")]
