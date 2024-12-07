@@ -26,7 +26,7 @@ namespace AlterunaFPS
 		private void OnEnable()
 		{
 			_respawnTime = RespawnTime;
-			countdown.text = "Respawn in " + Mathf.Ceil(_respawnTime);
+			countdown.text = "Reviviendo en " + Mathf.Ceil(_respawnTime);
 		}
 
 		private void Update()
@@ -36,7 +36,7 @@ namespace AlterunaFPS
 			int ceilTime = Mathf.CeilToInt(_respawnTime);
 			if (oldRespawnTime != ceilTime)
 			{
-				countdown.text = "Respawn in " + ceilTime;
+				countdown.text = "Reviviendo en " + ceilTime;
 				if (ceilTime <= 0)
 				{
 					Player.SetActive(true);

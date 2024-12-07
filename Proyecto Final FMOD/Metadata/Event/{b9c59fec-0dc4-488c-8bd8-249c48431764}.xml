@@ -128,6 +128,9 @@
 		<property name="start">
 			<value>2</value>
 		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{58084c0a-4d97-4c2e-b9aa-9ef6db427ed0}</destination>
 			<destination>{f20cbb33-ad7c-4a57-ab5c-be94b54fbdc7}</destination>
@@ -144,6 +147,9 @@
 	</object>
 	<object class="MultiSound" id="{c6d06aaf-6758-4fc4-97f4-dc850db1b9c3}">
 		<property name="start">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
 			<value>1</value>
 		</property>
 		<relationship name="modulators">

@@ -25,7 +25,8 @@ public class FootstepsManager : MonoBehaviour
     public void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.7f))
+        Vector3 rayOrigin = transform.position + Vector3.up * 0.5f;
+        if (Physics.Raycast(rayOrigin, Vector3.down, out hit, 2f))
         {
             if (hit.collider.CompareTag("Concrete"))
             {

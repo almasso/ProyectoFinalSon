@@ -32,27 +32,39 @@ public class SoundManager : MonoBehaviour
 
     #region backgroundMusic
     // Esto es lo de FMOD CORE
+    [SerializeField]
+    private string[] _backgroundMusicNames;
+    private FMOD.System _coreSystem;
+    private FMOD.ChannelGroup _channelGroup;
+    private FMOD.Sound[] _backgroundSounds;
     #endregion
 
 
-    private void Awake()
+    public void Awake()
     {
         _instance = this;
     }
 
-    private void Start()
+    public void Start()
     {
+        _coreSystem = RuntimeManager.CoreSystem;
+        _channelGroup = new FMOD.ChannelGroup();
+        
+        for(int i = 0; i < _backgroundMusicNames.Length; i++)
+        {
+            _coreSystem.createSound(_backgroundMusicNames[i], FMOD.MODE.DEFAULT, out _backgroundSounds[i]);
+        }
+
         _stepsEventInstance = RuntimeManager.CreateInstance(_stepsEvent);
         _buttonEventInstance = RuntimeManager.CreateInstance(_buttonEvent);
-        _shotEventInstance = RuntimeManager.CreateInstance(_shotEvent);
         _reloadEventInstance = RuntimeManager.CreateInstance(_reloadEvent);
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         _stepsEventInstance.release();
         _buttonEventInstance.release();
-        _shotEventInstance.release();
+        _reloadEventInstance.release();
     }
 
     public void PlayFootstepSound(string floorMaterial, Vector3 position)
@@ -69,8 +81,10 @@ public class SoundManager : MonoBehaviour
 
     public void PlayShotSound(Vector3 position)
     {
+        _shotEventInstance = RuntimeManager.CreateInstance(_shotEvent);
         _shotEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
         _shotEventInstance.start();
+        _shotEventInstance.release();
     }
 
     public void SetReloadPhase(int phase)
