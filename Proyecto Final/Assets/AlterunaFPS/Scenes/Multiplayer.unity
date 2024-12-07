@@ -443,11 +443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996443576612784561, guid: fe6e9076610e5904283d9fe4935a4854, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1046
+      value: 1101
       objectReference: {fileID: 0}
     - target: {fileID: 4996443576612784561, guid: fe6e9076610e5904283d9fe4935a4854, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 586
+      value: 516
       objectReference: {fileID: 0}
     - target: {fileID: 4996443576612784561, guid: fe6e9076610e5904283d9fe4935a4854, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1451,6 +1451,10 @@ MonoBehaviour:
       Data3: -1579754309
       Data4: 430664641
     Path: event:/Reload
+  _backgroundMusicNames:
+  - theme3.mod
+  - theme1.mod
+  - theme2.mod
 --- !u!4 &1976714086
 Transform:
   m_ObjectHideFlags: 0

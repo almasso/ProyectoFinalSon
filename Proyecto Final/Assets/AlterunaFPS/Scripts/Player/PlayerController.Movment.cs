@@ -172,11 +172,7 @@ namespace AlterunaFPS
 			}
 
 			//Apartado de sonido
-			if (emitter)
-			{
-                emitter.EventInstance.setParameterByName("speed", _speed / SprintSpeed);
-            }
-            
+			SoundManager.Instance().SetSpeedParameter(_speed / SprintSpeed);
         }
 
 		private void JumpAndGravity()

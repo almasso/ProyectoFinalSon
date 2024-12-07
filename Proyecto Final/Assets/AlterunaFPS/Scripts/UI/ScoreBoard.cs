@@ -112,7 +112,7 @@ public class ScoreBoard : Synchronizable
             var row = _rows.FirstOrDefault(r => r.ID == userID);
             if (row == null)
             {
-                Debug.LogError("ROW IS NULL! NO ROW WITH MATCHING USERID FOUND!");
+                //Debug.LogError("ROW IS NULL! NO ROW WITH MATCHING USERID FOUND!");
                 return;
             }
 

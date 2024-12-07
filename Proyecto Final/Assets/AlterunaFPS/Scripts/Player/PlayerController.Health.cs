@@ -44,10 +44,11 @@ namespace AlterunaFPS
 				damageIndicator.color = c;
 
             }
-            if (emitter)
+			SoundManager.Instance().SetDanger(1 - (_health.HealthPoints / MaxHealth));
+            /*if (emitter)
             {
                 emitter.EventInstance.setParameterByName("danger", 1 - (_health.HealthPoints / MaxHealth));
-            }
+            }*/
         }
 
 		private void OnDeath(ushort senderID)

@@ -2,6 +2,9 @@ using System;
 using FMODUnity;
 using UnityEngine;
 using UnityEditor;
+using FMOD;
+using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 
 public class SoundManager : MonoBehaviour
 {
@@ -36,7 +39,11 @@ public class SoundManager : MonoBehaviour
     private string[] _backgroundMusicNames;
     private FMOD.System _coreSystem;
     private FMOD.ChannelGroup _channelGroup;
+    private FMOD.Channel _channel;
     private FMOD.Sound[] _backgroundSounds;
+    private FMOD.DSP _lowPassDSP;
+    private int _speedMultiplier = 2;
+    private float _speed = 1.0f;
     #endregion
 
 
@@ -47,13 +54,20 @@ public class SoundManager : MonoBehaviour
 
     public void Start()
     {
-        _coreSystem = RuntimeManager.CoreSystem;
+        _coreSystem = FMODUnity.RuntimeManager.CoreSystem;
         _channelGroup = new FMOD.ChannelGroup();
-        
+        _backgroundSounds = new FMOD.Sound[_backgroundMusicNames.Length];
         for(int i = 0; i < _backgroundMusicNames.Length; i++)
         {
-            _coreSystem.createSound(_backgroundMusicNames[i], FMOD.MODE.DEFAULT, out _backgroundSounds[i]);
+            _coreSystem.createSound(Application.dataPath + "/Songs/" + _backgroundMusicNames[i], FMOD.MODE.DEFAULT, out _backgroundSounds[i]);
         }
+
+        _coreSystem.playSound(_backgroundSounds[0], _channelGroup, false, out _channel);
+
+        //Filtro de paso bajo (Digital Signal Processor)
+        _coreSystem.createDSPByType(FMOD.DSP_TYPE.LOWPASS, out _lowPassDSP);
+        _lowPassDSP.setParameterFloat((int)FMOD.DSP_LOWPASS.CUTOFF, 500.0f);
+        _lowPassDSP.setParameterFloat((int)FMOD.DSP_LOWPASS.RESONANCE, 1.0f);
 
         _stepsEventInstance = RuntimeManager.CreateInstance(_stepsEvent);
         _buttonEventInstance = RuntimeManager.CreateInstance(_buttonEvent);
@@ -65,6 +79,32 @@ public class SoundManager : MonoBehaviour
         _stepsEventInstance.release();
         _buttonEventInstance.release();
         _reloadEventInstance.release();
+        foreach (var sound in _backgroundSounds)
+        {
+            if (sound.hasHandle())
+            {
+                sound.release();
+            }
+        }
+        if (_lowPassDSP.hasHandle())
+        {
+            _lowPassDSP.release();
+        }
+    }
+
+    private void Update()
+    {
+        Sound sound;
+        _channel.getCurrentSound(out sound);
+        sound.setMusicSpeed(_speed);
+    }
+
+    //Ajusta el parámetro de la velocidad, el parametro recibido es un parámetro entre 0 y 1
+    public void SetSpeedParameter(float speed)
+    {
+        //Dividimos entre 2 para que no se acelere demasiado
+        //Y empezar en 0.8 como mínimo para que al caminar no suene muy acelerado tampoco
+        _speed = 0.8f + (speed/2);
     }
 
     public void PlayFootstepSound(string floorMaterial, Vector3 position)
@@ -90,11 +130,26 @@ public class SoundManager : MonoBehaviour
     public void SetReloadPhase(int phase)
     {
         _reloadEventInstance.setParameterByName("ReloadPhase", phase);
+        if(phase == 0)
+        {
+            _channel.addDSP(0, _lowPassDSP);
+        }
+        else if(phase >= 2) {
+            _channel.removeDSP(_lowPassDSP);
+        }
     }
     
     public void PlayReloadSound(Vector3 position)
     {
         _reloadEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
         _reloadEventInstance.start();
+        
+    }
+
+    public void SetDanger(float danger)
+    {
+        _channel.stop();
+        int index = Math.Clamp((int)(danger / 0.33f), 0, _backgroundSounds.Length -1);
+        _coreSystem.playSound(_backgroundSounds[index], _channelGroup, false, out _channel);
     }
 }
