@@ -2049,6 +2049,10 @@ MonoBehaviour:
       Data3: -1579754309
       Data4: 430664641
     Path: event:/Reload
+  _backgroundMusicNames:
+  - theme3.mod
+  - theme1.mod
+  - theme2.mod
 --- !u!4 &1532837746
 Transform:
   m_ObjectHideFlags: 0

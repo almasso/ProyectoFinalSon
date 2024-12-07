@@ -50,6 +50,7 @@ public class SoundManager : MonoBehaviour
     public void Awake()
     {
         _instance = this;
+        DontDestroyOnLoad(_instance);
     }
 
     public void Start()

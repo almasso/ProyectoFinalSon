@@ -821,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 4584003641056345410, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1976714085}
+      objectReference: {fileID: 0}
     - target: {fileID: 4584003641056345410, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -885,7 +885,7 @@ PrefabInstance:
     - target: {fileID: 5365849774351768545, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1976714085}
+      objectReference: {fileID: 0}
     - target: {fileID: 5365849774351768545, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1062,7 +1062,7 @@ PrefabInstance:
     - target: {fileID: 614504085, guid: 5a577542a281e0a448dc3b383023e1f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1976714085}
+      objectReference: {fileID: 0}
     - target: {fileID: 614504085, guid: 5a577542a281e0a448dc3b383023e1f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1094,7 +1094,7 @@ PrefabInstance:
     - target: {fileID: 2005702001, guid: 5a577542a281e0a448dc3b383023e1f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1976714085}
+      objectReference: {fileID: 0}
     - target: {fileID: 2005702001, guid: 5a577542a281e0a448dc3b383023e1f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1394,82 +1394,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0be0bbce52423c9489e0e393d6ca54a6, type: 3}
---- !u!1 &1976714084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1976714086}
-  - component: {fileID: 1976714085}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1976714085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976714084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449968048d84f4f01a479a2631484717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stepsEvent:
-    Guid:
-      Data1: -1178230804
-      Data2: 1217138116
-      Data3: -1675306869
-      Data4: 1679246152
-    Path: event:/Step
-  _buttonEvent:
-    Guid:
-      Data1: -202793746
-      Data2: 1171697511
-      Data3: -1900832124
-      Data4: 1161856252
-    Path: event:/UIClick
-  _shotEvent:
-    Guid:
-      Data1: 1109312234
-      Data2: 1307432945
-      Data3: 727074466
-      Data4: 1309031394
-    Path: event:/Shoot
-  _reloadEvent:
-    Guid:
-      Data1: 662137867
-      Data2: 1234136504
-      Data3: -1579754309
-      Data4: 430664641
-    Path: event:/Reload
-  _backgroundMusicNames:
-  - theme3.mod
-  - theme1.mod
-  - theme2.mod
---- !u!4 &1976714086
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976714084}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 523, y: 293, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040875847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,4 +1902,3 @@ SceneRoots:
   - {fileID: 838869647974338825}
   - {fileID: 1791383854}
   - {fileID: 1006881271}
-  - {fileID: 1976714086}
