@@ -9,6 +9,7 @@ namespace AlterunaFPS
 		public static GameObject Instance;
 
 		[SerializeField] private GameObject _menuObject;
+		[SerializeField] private GameObject _gunSight;
 
 
 		private void Awake()
@@ -28,6 +29,7 @@ namespace AlterunaFPS
 		private void ToggleMenu()
 		{
 			_menuObject.SetActive(!_menuObject.activeSelf);
+			_gunSight.SetActive(!_gunSight.activeSelf);
 			Cursor.visible = _menuObject.activeSelf;
 			Cursor.lockState = _menuObject.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
 		}

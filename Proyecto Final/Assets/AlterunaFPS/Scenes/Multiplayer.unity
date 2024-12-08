@@ -395,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4996443575575786806, guid: fe6e9076610e5904283d9fe4935a4854, type: 3}
       propertyPath: m_text
-      value: Asesinatos
+      value: Bajas
       objectReference: {fileID: 0}
     - target: {fileID: 4996443575575786806, guid: fe6e9076610e5904283d9fe4935a4854, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
