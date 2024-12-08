@@ -158,13 +158,11 @@ public class SoundManager : MonoBehaviour
         _shotEventInstance.release();
     }
 
-    public void SetReloadPhase(int phase)
+    public void SetReloadPhase(int phase, bool hasOwnership)
     {
-   
+        if (!hasOwnership) return;
         _reloadEventInstance.setParameterByName("ReloadPhase", phase);
-        PlayerController pController = gameObject.GetComponentInParent<PlayerController>();
-        if (pController == null || !pController.HasOwnership) return;
-        if(phase == 0)
+        if (phase == 0)
         {
             _channel.addDSP(0, _lowPassDSP);
         }

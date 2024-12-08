@@ -113,7 +113,12 @@ namespace AlterunaFPS
 				if (_reload || _gunMagazine <= 0)
 				{
 					GunAnimator.Play(_animIDGunReload);
-					_gunReloadCooldown = GunReloadTime;
+					GunAudio gAudio = GetComponentInChildren<GunAudio>();
+                    if (gAudio)
+                    {
+						gAudio.shouldPlay = true;
+                    }
+                    _gunReloadCooldown = GunReloadTime;
 					_gunMagazine = GunMagazineSize;
 				}
 			}
