@@ -68,7 +68,7 @@ public class SoundManager : MonoBehaviour
         _backgroundSounds = new FMOD.Sound[_backgroundMusicNames.Length];
         for(int i = 0; i < _backgroundMusicNames.Length; i++)
         {
-            _coreSystem.createSound(Application.dataPath + "/Songs/" + _backgroundMusicNames[i], FMOD.MODE.DEFAULT, out _backgroundSounds[i]);
+            _coreSystem.createSound(Application.streamingAssetsPath + "/Songs/" + _backgroundMusicNames[i], FMOD.MODE.DEFAULT, out _backgroundSounds[i]);
         }
 
         if(_backgroundSounds.Length > 0) _coreSystem.playSound(_backgroundSounds[0], _channelGroup, false, out _channel);
