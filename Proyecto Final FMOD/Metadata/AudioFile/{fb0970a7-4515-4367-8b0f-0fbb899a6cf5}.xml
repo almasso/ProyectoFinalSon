@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fb0970a7-4515-4367-8b0f-0fbb899a6cf5}">
+		<property name="assetPath">
+			<value>Falling/Concrete/477355__nuff3__steps-tile-falling_1a.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.54666666666666663</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b3d75f22-2540-4153-a4de-6f4792cb56e3}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -60,7 +60,6 @@ namespace AlterunaFPS
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			if (_volume) SoundManager.Instance().ChangeBackgroundVolume();
         }
 
 		private void LateUpdate()

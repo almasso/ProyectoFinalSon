@@ -54,7 +54,7 @@ namespace AlterunaFPS
 		{
 			if (animationEvent.animatorClipInfo.weight > 0.5f)
 			{
-				//AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+				SoundManager.Instance().PlayFallingSound(_footstepsManager.GetCurrentFloorMaterial(), this.gameObject.transform.position);
 			}
 		}
 		

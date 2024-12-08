@@ -2028,6 +2028,13 @@ MonoBehaviour:
       Data3: -1675306869
       Data4: 1679246152
     Path: event:/Step
+  _fallingEvent:
+    Guid:
+      Data1: 669729369
+      Data2: 1184403541
+      Data3: -1758924116
+      Data4: 1148963156
+    Path: event:/Falling
   _buttonEvent:
     Guid:
       Data1: -202793746
@@ -2053,6 +2060,7 @@ MonoBehaviour:
   - theme3.mod
   - theme1.mod
   - theme2.mod
+  _volumeChangeSpeed: 6
 --- !u!4 &1532837746
 Transform:
   m_ObjectHideFlags: 0

@@ -15,6 +15,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] 
     private EventReference _stepsEvent;
     private FMOD.Studio.EventInstance _stepsEventInstance;
+    [SerializeField]
+    private EventReference _fallingEvent;
+    private FMOD.Studio.EventInstance _fallingEventInstance;
     #endregion
     
     #region uiSounds
@@ -45,6 +48,9 @@ public class SoundManager : MonoBehaviour
     private int _speedMultiplier = 2;
     private float _speed = 1.0f;
     private float _volume = 1.0f;
+    [SerializeField]
+    private float _volumeChangeSpeed = 1.0f;
+    private bool _isMutePressed = false;
     #endregion
 
 
@@ -74,6 +80,7 @@ public class SoundManager : MonoBehaviour
         _stepsEventInstance = RuntimeManager.CreateInstance(_stepsEvent);
         _buttonEventInstance = RuntimeManager.CreateInstance(_buttonEvent);
         _reloadEventInstance = RuntimeManager.CreateInstance(_reloadEvent);
+        _fallingEventInstance = RuntimeManager.CreateInstance(_fallingEvent);
     }
 
     public void OnDestroy()
@@ -81,6 +88,7 @@ public class SoundManager : MonoBehaviour
         _stepsEventInstance.release();
         _buttonEventInstance.release();
         _reloadEventInstance.release();
+        _fallingEventInstance.release();
         foreach (var sound in _backgroundSounds)
         {
             if (sound.hasHandle())
@@ -96,12 +104,18 @@ public class SoundManager : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M) && !_isMutePressed)
+        {
+            _isMutePressed = true;
+            SoundManager.Instance().ChangeBackgroundVolume();
+        }
+        if (Input.GetKeyUp(KeyCode.M) && _isMutePressed) _isMutePressed = false;
         Sound sound;
         _channel.getCurrentSound(out sound);
         sound.setMusicSpeed(_speed);
         float currentVol;
         _channel.getVolume(out currentVol);
-        _channel.setVolume(Mathf.Lerp(currentVol, _volume, 0.5f));
+        _channel.setVolume(Mathf.Lerp(currentVol, _volume, _volumeChangeSpeed * Time.deltaTime));
     }
 
     //Ajusta el parámetro de la velocidad, el parametro recibido es un parámetro entre 0 y 1
@@ -119,6 +133,13 @@ public class SoundManager : MonoBehaviour
         _stepsEventInstance.start();
     }
 
+    public void PlayFallingSound(string floorMaterial, Vector3 position)
+    {
+        _fallingEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+        _fallingEventInstance.setParameterByNameWithLabel("Floor Material", floorMaterial);
+        _fallingEventInstance.start();
+    }
+
     public void PlayUISound()
     {
         _buttonEventInstance.start();
@@ -126,6 +147,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlayShotSound(Vector3 position)
     {
+        // Aquí creamos y destruimos el evento porque queremos que cada disparo pertenezca a un evento distinto y que no se corte el sonido
+        // si disparamos muy de seguido.
         _shotEventInstance = RuntimeManager.CreateInstance(_shotEvent);
         _shotEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
         _shotEventInstance.start();
