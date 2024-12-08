@@ -21,7 +21,7 @@ namespace AlterunaFPS
         public void SetReloadPhase(int phase)
         {
             SoundManager.Instance().SetReloadPhase(phase, shouldPlay);
-            if (phase >= 2) shouldPlay = false;
+            if (phase >= 3) shouldPlay = false;
         }
 
         public void PlayFireSfx() => SoundManager.Instance().PlayShotSound(gameObject.transform.position);

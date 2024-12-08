@@ -183,6 +183,7 @@ public class SoundManager : MonoBehaviour
         _channel.stop();
         int index = Math.Clamp((int)(danger / 0.33f), 0, _backgroundSounds.Length -1);
         _coreSystem.playSound(_backgroundSounds[index], _channelGroup, false, out _channel);
+        _channel.setVolume(_volume);
     }
 
     public void ChangeBackgroundVolume()
