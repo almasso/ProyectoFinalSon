@@ -5,6 +5,7 @@ using UnityEditor;
 using FMOD;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using AlterunaFPS;
 
 public class SoundManager : MonoBehaviour
 {
@@ -159,7 +160,10 @@ public class SoundManager : MonoBehaviour
 
     public void SetReloadPhase(int phase)
     {
+   
         _reloadEventInstance.setParameterByName("ReloadPhase", phase);
+        PlayerController pController = gameObject.GetComponentInParent<PlayerController>();
+        if (pController == null || !pController.HasOwnership) return;
         if(phase == 0)
         {
             _channel.addDSP(0, _lowPassDSP);
