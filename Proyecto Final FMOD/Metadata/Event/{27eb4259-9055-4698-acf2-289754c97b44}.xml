@@ -130,7 +130,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{02e54e24-4e89-431b-b651-75b9c9c0cf1b}">
 		<property name="name">
-			<value>Audio 1</value>
+			<value>Falling</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{9313499b-0880-4bf7-9fbc-49c73f5aaa3c}</destination>
@@ -271,7 +271,6 @@
 		<property name="name">
 			<value>Attenuation Ran</value>
 		</property>
-		<property name="value" />
 		<property name="dataType">
 			<value>-6</value>
 		</property>
@@ -280,7 +279,6 @@
 		<property name="name">
 			<value>3D Attributes</value>
 		</property>
-		<property name="value" />
 		<property name="dataType">
 			<value>-2</value>
 		</property>
@@ -316,7 +314,6 @@
 		<property name="name">
 			<value>Overall Gain</value>
 		</property>
-		<property name="value" />
 		<property name="dataType">
 			<value>-1</value>
 		</property>

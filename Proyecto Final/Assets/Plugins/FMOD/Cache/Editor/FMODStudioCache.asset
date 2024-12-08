@@ -130,7 +130,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 500
+  Length: 100
 --- !u!114 &-332568805374592342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   Path: ../Proyecto Final FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638692308596545263
+  lastModified: 638692847033967345
   FileSizes:
   - Name: Desktop
     Value: 1196
@@ -178,7 +178,7 @@ MonoBehaviour:
   - {fileID: 3801382807230451742}
   StringsBanks:
   - {fileID: -332568805374592342}
-  cacheTime: 638692308596545263
+  cacheTime: 638692847033967345
   cacheVersion: 131621
 --- !u!114 &420975455425604101
 MonoBehaviour:
@@ -273,10 +273,10 @@ MonoBehaviour:
   Path: ../Proyecto Final FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638692308596525267
+  lastModified: 638692847033937335
   FileSizes:
   - Name: Desktop
-    Value: 8316672
+    Value: 8316960
   Exists: 1
 --- !u!114 &6636997963801655769
 MonoBehaviour:
