@@ -66,8 +66,9 @@ namespace AlterunaFPS
 
 				if (transform.root.CompareTag("Player"))
                 {
-					ScoreBoard.Instance.AddScore(senderID, (int)damage);
 					transform.gameObject.GetComponent<PlayerController>().UpdatedHealthValue();
+					if(ScoreBoard.Instance != null)
+						ScoreBoard.Instance.AddScore(senderID, (int)damage);
 				}
 
 				if (HealthPoints <= 0f)

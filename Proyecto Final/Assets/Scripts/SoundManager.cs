@@ -5,6 +5,7 @@ using UnityEditor;
 using FMOD;
 using Unity.VisualScripting;
 using UnityEditor.ShaderGraph.Internal;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -58,6 +59,7 @@ public class SoundManager : MonoBehaviour
     {
         _instance = this;
         DontDestroyOnLoad(_instance);
+        SceneManager.LoadScene(1);
     }
 
     public void Start()
@@ -81,6 +83,7 @@ public class SoundManager : MonoBehaviour
         _buttonEventInstance = RuntimeManager.CreateInstance(_buttonEvent);
         _reloadEventInstance = RuntimeManager.CreateInstance(_reloadEvent);
         _fallingEventInstance = RuntimeManager.CreateInstance(_fallingEvent);
+
     }
 
     public void OnDestroy()

@@ -911,6 +911,10 @@ PrefabInstance:
       value: AlterunaFPS.MenuInstance, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5365849774351768545, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365849774351768545, guid: 5acbf30c8f8ab9943a57f8e07435bf21, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 
       objectReference: {fileID: 0}
