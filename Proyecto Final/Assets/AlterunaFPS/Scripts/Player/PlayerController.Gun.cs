@@ -116,7 +116,7 @@ namespace AlterunaFPS
 					GunAudio gAudio = GetComponentInChildren<GunAudio>();
                     if (gAudio)
                     {
-						gAudio.shouldPlay = true;
+						gAudio.shouldPlay = _isOwner;
                     }
                     _gunReloadCooldown = GunReloadTime;
 					_gunMagazine = GunMagazineSize;
