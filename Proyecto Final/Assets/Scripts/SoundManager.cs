@@ -44,6 +44,7 @@ public class SoundManager : MonoBehaviour
     private FMOD.DSP _lowPassDSP;
     private int _speedMultiplier = 2;
     private float _speed = 1.0f;
+    private float _volume = 1.0f;
     #endregion
 
 
@@ -63,7 +64,7 @@ public class SoundManager : MonoBehaviour
             _coreSystem.createSound(Application.dataPath + "/Songs/" + _backgroundMusicNames[i], FMOD.MODE.DEFAULT, out _backgroundSounds[i]);
         }
 
-        _coreSystem.playSound(_backgroundSounds[0], _channelGroup, false, out _channel);
+        if(_backgroundSounds.Length > 0) _coreSystem.playSound(_backgroundSounds[0], _channelGroup, false, out _channel);
 
         //Filtro de paso bajo (Digital Signal Processor)
         _coreSystem.createDSPByType(FMOD.DSP_TYPE.LOWPASS, out _lowPassDSP);
@@ -93,11 +94,14 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Update()
     {
         Sound sound;
         _channel.getCurrentSound(out sound);
         sound.setMusicSpeed(_speed);
+        float currentVol;
+        _channel.getVolume(out currentVol);
+        _channel.setVolume(Mathf.Lerp(currentVol, _volume, 0.5f));
     }
 
     //Ajusta el parámetro de la velocidad, el parametro recibido es un parámetro entre 0 y 1
@@ -152,5 +156,10 @@ public class SoundManager : MonoBehaviour
         _channel.stop();
         int index = Math.Clamp((int)(danger / 0.33f), 0, _backgroundSounds.Length -1);
         _coreSystem.playSound(_backgroundSounds[index], _channelGroup, false, out _channel);
+    }
+
+    public void ChangeBackgroundVolume()
+    {
+        _volume = _volume == 1.0f ? 0.0f : 1.0f;
     }
 }
